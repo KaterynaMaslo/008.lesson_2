@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function generateTable() {
+            const tbl = document.createElement("table");
+            const tblBody = document.createElement("tbody");
+
+            for (let i = 0; i < 10; i++) {
+                //const row = document.createElement("tr");
+                var row = tbl.insertRow(i);
+                for (let j = 0; j < 10; j++) {
+                    //const cell = document.createElement("td");
+                    var cell = row.insertCell(j);
+                    const cellText = document.createTextNode(`  row ${i+1}, column ${j+1} `);
+                    cell.appendChild(cellText);
+                    //row.appendChild(cell);
+                }
+                //tblBody.appendChild(row);
+            }
+
+            //tbl.appendChild(tblBody);
+            document.body.appendChild(tbl);
+            tbl.setAttribute("border", "1");
+        }
+        generateTable();
+    </script>
+</body>
+</html>
